@@ -1,18 +1,18 @@
 from selenium import webdriver
 import schedule
 import time
+import os
 
 URL = "https://increasefollower.com/giriss"
 
 
 def job():
-    GOOGLE_CHROME_PATH = '/app/.apt/usr/bin/google_chrome'
-    CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
     option = webdriver.ChromeOptions()
-    option.add_argument('headless')
-    option.binary_location = GOOGLE_CHROME_PATH
-    driver = webdriver.Chrome(execution_path=CHROMEDRIVER_PATH, options=option)
-    # driver = webdriver.Chrome('chromedriver', options=option)
+    option.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+    option.add_argument('--headless')
+    option.add_argument("--no-sendbox")
+    option.add_argument("--disable-dev-sh-usage")
+    driver = webdriver.Chrome(execution_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=option)
 
     driver.get(URL)
 

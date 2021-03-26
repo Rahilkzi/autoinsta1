@@ -15,7 +15,7 @@ def job():
     driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=option)
 
     driver.get(URL)
-    time.sleep(30)
+    time.sleep(20)
 
     username = driver.find_element_by_id("username")
     time.sleep(30)
@@ -39,7 +39,7 @@ def job():
     time.sleep(30)
 
     username = driver.find_element_by_id("username")
-    time.sleep(30)
+    time.sleep(10)
     username.send_keys("rahil_kzi")
     time.sleep(30)
 
@@ -53,13 +53,13 @@ def job():
 
     submit = driver.find_element_by_id("gonder")
     submit.click()
-    time.sleep(30)
+    time.sleep(10)
 
     driver.quit()
 
 
-schedule.every().day.at("10:30").do(job)
-# schedule.every(3).seconds.do(job)
+# schedule.every().day.at("10:30").do(job)
+schedule.every(3).seconds.do(job)
 
 while True:
     schedule.run_pending()

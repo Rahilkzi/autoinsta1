@@ -12,7 +12,7 @@ def job():
     option.add_argument('--headless')
     option.add_argument("--no-sendbox")
     option.add_argument("--disable-dev-sh-usage")
-    driver = webdriver.Chrome(execution_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=option)
+    driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=option)
 
     driver.get(URL)
 

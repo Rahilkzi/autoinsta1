@@ -20,7 +20,7 @@ def job():
     username = driver.find_element_by_id("username")
     time.sleep(30)
 
-    username.send_keys("bookmysmoky")
+    username.send_keys("booksmok")
     time.sleep(30)
 
     submit = driver.find_element_by_id("gonder")
@@ -28,7 +28,7 @@ def job():
     time.sleep(30)
 
     password = driver.find_element_by_id("password")
-    password.send_keys("bookmyshow")
+    password.send_keys("book01")
     time.sleep(30)
     submit = driver.find_element_by_id("gonder")
     submit.click()
@@ -58,8 +58,9 @@ def job():
     driver.quit()
 
 
-schedule.every().day.at("10:30").do(job)
+# schedule.every().day.at("10:30").do(job)
 # schedule.every(3).seconds.do(job)
+schedule.every(3).hours.do(job)
 
 while True:
     schedule.run_pending()

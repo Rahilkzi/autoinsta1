@@ -5,6 +5,8 @@ import os
 
 URL = "https://increasefollower.com/giriss"
 
+print ("starting")
+
 
 def job():
     option = webdriver.ChromeOptions()

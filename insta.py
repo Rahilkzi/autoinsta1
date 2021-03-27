@@ -17,53 +17,69 @@ def job():
     option.add_argument("--disable-dev-sh-usage")
     driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=option)
 
+    print ("Getting Url")
     driver.get(URL)
     time.sleep(20)
+     
 
+    print ("Trying To Login")
+    print ("Typing Username")
     username = driver.find_element_by_id("username")
     time.sleep(10)
-
     username.send_keys("booksmok")
     time.sleep(15)
-
+    
+    print ("Submit Username")
     submit = driver.find_element_by_id("gonder")
     submit.click()
     time.sleep(20)
-
+ 
+    print ("Typing Password")
     password = driver.find_element_by_id("password")
     password.send_keys("book01")
     time.sleep(10)
+
+    print ("Submit Password")
     submit = driver.find_element_by_id("gonder")
     submit.click()
     time.sleep(20)
 
+    
+    print ("Going to send followers")
     sendF = driver.find_element_by_xpath("/html/body/main/div/div[2]/div[1]/div/div[2]/a/div/button")
     sendF.click()
     time.sleep(20)
-
+ 
+    print ("Typing Username for sending")
     username = driver.find_element_by_id("username")
     time.sleep(10)
     username.send_keys("rahil_kzi")
     time.sleep(15)
-
+ 
+    print ("Submit send followers")
     submit = driver.find_element_by_id("gonder")
     submit.click()
     time.sleep(20)
-
+    
+    print ("How many follower")
     no = driver.find_element_by_id("adet")
     no.send_keys('30')
     time.sleep(15)
 
+    print ("submit")
     submit = driver.find_element_by_id("gonder")
     submit.click()
     time.sleep(10)
+
+    print ("done")
+    time.sleep(2)
 
     driver.quit()
 
 
 # schedule.every().day.at("10:30").do(job)
-schedule.every(100).seconds.do(job)
-# schedule.every(2).hours.do(job)
+# schedule.every(60).seconds.do(job)
+schedule.every(2).hours.do(job)
 
 while True:
     schedule.run_pending()

@@ -19,15 +19,15 @@ def job():
 
     print ("Getting Url")
     driver.get(URL)
-    time.sleep(20)
+    time.sleep(15)
      
 
     print ("Trying To Login")
     print ("Typing Username")
     username = driver.find_element_by_id("username")
-    time.sleep(10)
+    time.sleep(5)
     username.send_keys("bookmysmoky")
-    time.sleep(15)
+    time.sleep(10)
     
     print ("Submit Username")
     submit = driver.find_element_by_id("gonder")
@@ -52,7 +52,7 @@ def job():
  
     print ("Typing Username for sending")
     username = driver.find_element_by_id("username")
-    time.sleep(10)
+    time.sleep(5)
     username.send_keys("rahil_kzi")
     time.sleep(15)
  

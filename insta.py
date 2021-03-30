@@ -26,7 +26,7 @@ def job():
     print ("Typing Username")
     username = driver.find_element_by_id("username")
     time.sleep(5)
-    username.send_keys("bookmysmoky")
+    username.send_keys("booksmok")
     time.sleep(10)
     
     print ("Submit Username")
@@ -36,7 +36,7 @@ def job():
  
     print ("Typing Password")
     password = driver.find_element_by_id("password")
-    password.send_keys("bookmyrool")
+    password.send_keys("book001")
     time.sleep(10)
 
     print ("Submit Password")
